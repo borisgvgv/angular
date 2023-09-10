@@ -13,10 +13,18 @@ const tablet: Product = {
   price: 250,
 };
 
+const shopingCart = [phone, tablet];
+const tax = 0.15; //impuesto sobre cada artículo
+
 interface taxCalculationOptions {
-  tax: number;
   products: Product[];
+  tax: number;
 }
+
+const resultado = taxCalculation({
+  products: shopingCart,
+  tax,
+});
 
 function taxCalculation(opcion: taxCalculationOptions): number[] {
   let total = 0;
@@ -24,15 +32,11 @@ function taxCalculation(opcion: taxCalculationOptions): number[] {
     total += producto.price;
   });
   return [total, total * opcion.tax];
+  
 }
 
-const shopingCart = [phone, tablet];
-const tax = 0.15;
-
-const resultado = taxCalculation({
-  products: shopingCart,
-  tax,
-});
 
 console.log(resultado);
+
+
 export {};
