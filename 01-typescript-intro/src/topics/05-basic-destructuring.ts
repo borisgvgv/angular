@@ -10,6 +10,7 @@ interface Details {
   year: number;
 }
 
+//Objeto
 const audioPlayer: AudioPlayer = {
   audioVolume: 50,
   songDuration: 39,
